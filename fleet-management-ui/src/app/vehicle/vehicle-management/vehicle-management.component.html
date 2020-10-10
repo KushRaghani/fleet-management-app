@@ -1,0 +1,52 @@
+<nz-page-header class="site-page-header">
+  <nz-page-header-title>Vehicle Management</nz-page-header-title>
+  <nz-page-header-extra>
+    <button nz-button nzType="primary">Add Vehicle</button>
+  </nz-page-header-extra>
+</nz-page-header>
+<nz-table
+  #basicTable
+  [nzData]="listOfVehicles"
+  nzBordered
+  nzSize="middle"
+  [nzScroll]="{ y: '240px' }"
+>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>VIN</th>
+      <th>Odometer</th>
+      <th>Status</th>
+      <th>Vehicle Plate</th>
+      <th>Year</th>
+      <th>Type</th>
+      <th>Model</th>
+      <th>Sub Model</th>
+      <th>Manufacturer</th>
+      <th>Last Maintanence Date</th>
+      <th>Created By</th>
+      <th>Created Date</th>
+      <th>Updated By</th>
+      <th>Updated Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.vehicle_id }}</td>
+      <td>{{ data.vehicle_vin }}</td>
+      <td>{{ data.vehicle_odomoter }}</td>
+      <td>{{ data.vehicle_status }}</td>
+      <td>{{ data.vehicle_vehicle_plate }}</td>
+      <td>{{ data.vehicle_year }}</td>
+      <td>{{ data.vehicle_type }}</td>
+      <td>{{ data.vehicle_model }}</td>
+      <td>{{ data.vehicle_sub_model }}</td>
+      <td>{{ data.vehicle_manufacturer }}</td>
+      <td>{{ data.vehicle_last_maintainence_date }}</td>
+      <td>{{ data.vehicle_created_by }}</td>
+      <td>{{ data.vehicle_created_date_time }}</td>
+      <td>{{ data.vehicle_updated_by }}</td>
+      <td>{{ data.vehicle_updated_date_time }}</td>
+    </tr>
+  </tbody>
+</nz-table>

@@ -14,9 +14,13 @@ export class VehicleService {
   async findOne(id: number): Promise<Vehicle> {
     return await this.repository
       .createQueryBuilder('vehicle')
-      .addSelect('*')
+      //.addSelect('*')
       .where('vehicle.id=:id', { id })
       .getOne();
+  }
+
+  async findAll(): Promise<Vehicle[]> {
+    return await this.repository.createQueryBuilder('vehicle').execute();
   }
 
   async addVehicle(addVehicleData: AddVehicleDto): Promise<Vehicle> {
